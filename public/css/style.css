@@ -25,6 +25,7 @@ body{
 
 /* styles container on registration and signin page that holds logo, fields, and registration button */
 .registration-container, .signin-container {
+    background-color: rgb(236, 236, 236);
     margin: 1rem;
     padding: 2rem;
     text-align: center;
