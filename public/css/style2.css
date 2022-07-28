@@ -1,0 +1,109 @@
+/* Basic style */
+body{
+    --color-background-primary: #F4E285;
+    --color-background-secondary: #456990;
+    --color-font-primary: #456990;
+    --color-font-error: #BC4B51;
+    --color-btn-primary: #5b8e7d;
+    --color-btn-primary-active: #8cb369;
+    --color-btn-secondary: #BC4B51;
+    --border-radius: 12px;
+    --button-border-radius: 4px;
+    --button-border-width: 2px;
+
+   
+    font-size: 18px;
+    background-color: var(--color-background-primary);
+/* FONT FAMILY TBD */
+    /* font-family: ; */
+    color: var(--color-font-primary);
+}
+/* styles buttons on website NOTE: any button using the class "button" will receive this style */
+.button {
+    background: var(--color-btn-primary);
+    border:none;
+    border-radius: var(--button-border-radius);
+}
+/* styles hover action for buttons on website NOTE: any button using the class "button" will receive this style */
+.button:hover {
+    background: var(--color-btn-primary-active);
+    border: solid;
+    border-color: var(--color-btn-primary);
+    border-radius: var(--button-border-radius);
+    border-width: var(--button-border-width);
+}
+
+
+/* feed */
+.posts-container{
+    margin-left: 3rem;
+}
+
+
+.cats-card{
+    margin-left: 60rem;
+    margin-bottom: 30rem;
+    margin-top: -25rem;
+}
+
+.card{
+    background-color: #F4E285;
+}
+
+.post-btn{
+    margin-left: 65rem;
+    /* margin-top: 10rem; */
+    background-color: #456990;
+}
+
+.post-btn:hover{
+    background-color: #456990;
+    color: floralwhite;
+}
+div.scroll {
+    width: 670px;
+    height: 650px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+}
+
+.button-flex{
+    --color-btn-primary: #5b8e7d;
+    color: #456990;
+    background: var(--color-btn-primary);
+    border:none;
+    border-radius: var(--button-border-radius);
+    
+}
+
+/* posts */
+
+
+
+
+
+
+
+
+
+/* added to handle profile button */
+.navbar {
+    display: flex;
+    align-items: baseline;
+
+}
+.link{
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+}
+.link{
+    color: var(--color-font-primary);
+}
+.resize {
+    height: 50px;
+    width: auto;
+}
