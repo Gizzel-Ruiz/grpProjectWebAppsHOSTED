@@ -10,8 +10,8 @@ router.get('/usrsign', (req, res) => {
     res.render('usrsign')
 })
 
-router.get('/myposts', (req, res) => {
-    res.render('mypost')
+router.get('/prof', (req, res) => {
+    res.render('prof')
 })
 
 router.get('/feed', (req, res) => {
