@@ -1,6 +1,5 @@
 .DS_Store
 /mongo.js
-/mongobd.js
 
 # Logs
 logs
