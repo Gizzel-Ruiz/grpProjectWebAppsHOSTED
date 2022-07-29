@@ -1,3 +1,4 @@
+const mongo = require('./mongo')
 const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./route/pages');
@@ -14,7 +15,7 @@ app.use('/', route);
 //     console.log(`Server is running on port 8000`)  
 // }) 
 
-mongoose.connect("", {useNewURLParser: true, useUnifiedTopology: true})
+mongoose.connect(mongo, {useNewURLParser: true, useUnifiedTopology: true})
 .then(() => {
 	app.listen(3000, () => {
 	    console.log("server is running on 3000")
