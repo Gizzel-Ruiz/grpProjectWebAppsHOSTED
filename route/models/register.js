@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 var registrationSchema = new mongoose.Schema({
-    userEmal: {
+    userEmail: {
         type: String
     },
     userName: {
@@ -11,4 +11,4 @@ var registrationSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('User', registrationSchema)
+module.exports = mongoose.model('users', registrationSchema)

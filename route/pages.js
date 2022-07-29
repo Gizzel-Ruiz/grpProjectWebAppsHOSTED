@@ -1,7 +1,6 @@
 const express = require('express');
-const { rawListeners } = require('./models/uregister');
 const router = express.Router();
-const Register = require('./models/uregister')
+const Register = require('./models/register')
 
 router.get('/', (req, res) => {
     res.render('usrregi')
@@ -32,14 +31,14 @@ router.get('/post', (req, res) => {
 })
 
 router.post("/submitRegister", (req, res) => {
-    const Register = new Register ({
+    const register = new Register ({
         userEmail: req.body.userEmail,
         userName: req.body.userName,
         userPass: req.body.userPass
     });
     Register.collection.insertOne(register)
     .then(result => {
-        res.render('/feed')
+        res.render('feed')
     })
     .catch(err => console.log(err));
 })

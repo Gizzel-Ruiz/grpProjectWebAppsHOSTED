@@ -27,7 +27,7 @@
                     </div>
                     <!--column for registration details-->
                     <div class="col justify-content-center ">
-                        <form action="submitRegister" method="post" class="form" id="register">
+                        <form action="/submitRegister" method="post" class="form" id="register">
                             <h3 class="register-form-title">Register<br><br></h3>
                             <div class="mb-3">
                               <input type="email" class="form-control" autofocus name="userEmail" aria-describedby="emailHelp" placeholder="email" required>
@@ -46,7 +46,7 @@
                               <label class="already-registered-label"><br>Already have an account? <a href="/usrsign">Sign in</a><br><br></label>
                             </div>
                             <div class="mb-3">
-                            <button type="button" class="button" id="regButton" onClick="location.href='/feed'">Register</button>
+                            <button type="submit" class="button" id="regButton" onClick="location.href='/feed'">Register</button>
                             </div>
                         </form>
                     </div>
