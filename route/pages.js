@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Register = require('./models/uregister')
 
 router.get('/', (req, res) => {
     res.render('usrregi')
@@ -7,6 +8,10 @@ router.get('/', (req, res) => {
 
 router.get('/usrsign', (req, res) => {
     res.render('usrsign')
+})
+
+router.get('/myposts', (req, res) => {
+    res.render('mypost')
 })
 
 router.get('/feed', (req, res) => {
@@ -25,8 +30,10 @@ router.get('/post', (req, res) => {
     res.render('post')
 })
 
-router.get('/profile', (req, res) => {
-    res.render('profile')
+router.post("/Register", (req, res) => {
+    const Register = new Register ({
+
+    })
 })
 
 module.exports = router;
