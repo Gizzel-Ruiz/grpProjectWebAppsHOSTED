@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 var registrationSchema = new mongoose.Schema({
-    exampleInputEmail1: {
+    userEmal: {
         type: String
     },
-    exampleInputUserName: {
+    userName: {
         type: String
     },
-    exampleInputPassword1: {
+    userPass: {
         type: String
     }
 });

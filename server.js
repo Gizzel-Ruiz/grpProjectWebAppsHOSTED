@@ -14,9 +14,9 @@ app.use('/', route);
 //     console.log(`Server is running on port 8000`)  
 // }) 
 
-mongoose.connect("mongodb+srv://gruiz8:gbzSxoNxrfbqXiAH@webappsuser.kjf1k.mongodb.net/WebAppsUser", {useNewURLParser: true, useUnifiedTopology: true})
+mongoose.connect("", {useNewURLParser: true, useUnifiedTopology: true})
 .then(() => {
-	app.listen(8000, () => {
+	app.listen(3000, () => {
 	    console.log("server is running on 3000")
 	})
 })
