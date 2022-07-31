@@ -37,8 +37,8 @@ router.get('/post', (req, res) => {
     res.render('post') 
 })
 
-router.get('/Errusrsign', (req, res) => { 
-    res.render('Errusrsign') 
+router.get('/errorusrsign', (req, res) => { 
+    res.render('errorusrsign') 
 }) 
  
  
@@ -69,7 +69,7 @@ router.post('/submitSignin', (req, res) => {
             res.render('feed')
         }else{
             console.log("No user match found")
-            res.render('Errusrsign', {error:"Incorrect username/password combination"})
+            res.render('errorusrsign')
         }
     })
 }) 
