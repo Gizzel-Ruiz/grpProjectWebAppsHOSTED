@@ -35,6 +35,10 @@ router.get('/cat2', (req, res) => {
  
 router.get('/post', (req, res) => { 
     res.render('post') 
+})
+
+router.get('/Errusrsign', (req, res) => { 
+    res.render('Errusrsign') 
 }) 
  
  
@@ -43,7 +47,7 @@ router.post("/submitRegister", (req, res) => {
         userEmail: req.body.userEmail, 
         userName: req.body.userName, 
         userPass: req.body.userPass 
-    }); 
+    });
     Register.collection.insertOne(register) 
     .then(result => { 
         res.render('feed') 
@@ -58,7 +62,6 @@ router.post('/submitSignin', (req, res) => {
         userPass 
     } = req.body; 
  
-    
     Register.findOne({userName : userName, userPass : userPass}, function(err, doc){
         if(err) throw err;
         if(doc) {
@@ -66,11 +69,9 @@ router.post('/submitSignin', (req, res) => {
             res.render('feed')
         }else{
             console.log("No user match found")
-            res.render('usrsign', {error:"Incorrect username/password combination"})
+            res.render('Errusrsign', {error:"Incorrect username/password combination"})
         }
     })
 }) 
- 
- 
  
 module.exports = router;

@@ -61,10 +61,6 @@ body{
     border-radius: var(--button-border-radius);
     border-width: var(--button-border-width);
 }
-/* styles error label on registration and sign in form so that it's not displayed when page is loaded */
-.regErrorLabel, .signinErrorLabel {
-    display: none;
-}
 
 /* styles container on registration and sign in page that holds image to ensure it's centered even if fields move */
 #regImgContainer, #signinImgContainer {
