@@ -16,27 +16,44 @@
 <body>
     <!-- navbar -->
     <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand">
-            <img src="/img/placeholderimg_200x200.png" alt="logo" width="70" height="70" class="d-inline-block">
-            AppName?  
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="/img/placeholderimg_200x200.png" alt="logo" width="70" height="70" class="d-inline-block">
+          AppName?  
+        </a>
+        <a class="button" href="/feed" role="button" style="margin-left: 60rem;">Home Feed
+          <i class="bi bi-house button-icon"></i>
+        </a>
+        <!-- profile menu dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="link"><img class="resize" src="img/profileIcon.png"></button>
           </a>
-          <button class="btn btn-outline-success me-2" type="button">Home Feed</button>
-          <button class="btn btn-outline-success me-2" type="button">Profile</button>
-        </div>
-    </nav>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/prof">My Posts</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/usrsign">log out</a></li>
+          </ul>
+      </div>
+      </div>
+  </nav>
+<!-- post -->
+  <div class="container new-post-container">
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <option selected>Categories: </option>
+      <option value="1">Anime</option>
+      <option value="2">Book</option>
+    </select>
 
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-    </div>
+    <input type="text" class="form-control title-form" id="titleInput" placeholder="Title">
 
+    <textarea type="text" class="form-control text-form" id="textInput" placeholder="A penny for your thoughts..."></textarea>
+
+    <a class="button cancel-button" href="/feed" role="button">Cancel</a>
+
+    <a class="button post-button" href="#" role="button">Post</a>
+
+  </div>
 
 
 </body>
