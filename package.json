@@ -4,7 +4,8 @@
   "description": "web apps project ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "body-parser": "^1.20.0",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "mongoose": "^6.5.0"
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
   }
 }
