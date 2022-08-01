@@ -1,4 +1,4 @@
-<!--registration page-->
+<!--sign in page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,39 +11,40 @@
     <link rel="stylesheet" href="/css/style.css">
     <!--link to website's js file-->
     <script src="phapp.js"></script>
-    <title>Document/register</title>
+    <title>Document/signin</title>
 </head>
 
 <body>
-    <div class="registration-container">
-        <div class="signup-contents-row-div">
+    <div class="signin-container">
+        <div class="signin-contents-row-div">
             <div class="container text-center">
                 <div class="row">
                     <!--column for website logo-->
                     <div class="col justify-content-center" id="column1">
-                        <div class="container" id="regImgContainer">
-                            <img src="/img/bookmei.png" alt="logo" id="logoimg">
+                        <div class="container" id="signinImgContainer">
+                            <img src="/img/bookmei_small.png" alt="logo" id="logoimg">
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <!--column for registration details-->
                     <div class="col justify-content-center ">
-                        <form action="/submitRegister" method="post" class="form" id="register">
-                            <h3 class="register-form-title">Register<br><br></h3>
-                            <div class="mb-3">
-                              <input type="email" class="form-control" autofocus name="userEmail" aria-describedby="emailHelp" placeholder="email" required>
-                              <div id="emailHelp" class="form-emailHelp">We'll never share your email with anyone else.</div>
-                            </div>
+                        <form action="/submitSignin" method="post" class="form" id="register">
+                            <h3 class="signin-form-title">Sign-In<br><br></h3>
                             <div class="mb-3">
                                 <input type="text" class="form-control" autofocus name="userName" placeholder="username" required>
                             </div>
                             <div class="mb-3">
                               <input type="password" class="form-control" autofocus name="userPass" placeholder="password" required>
                             </div>
-                            <div class="mb-3">
-                              <label class="already-registered-label"><br>Already have an account? <a href="/usrsign">Sign in</a><br><br></label>
+                            <div class="form-error-msg" id="formErrorMsg">
+                                <label class="signinErrorLabel" id="signinErrorLabel">Incorrect username/password</label>
                             </div>
                             <div class="mb-3">
-                            <button type="submit" class="button" id="regButton">Register</button>
+                              <label class="not-registered-label"><br>Not registered? <a href="/">Create Account</a><br><br></label>
+                            </div>
+                            <div class="mb-3">
+                            <button type="submit" class="button" id="signinButton">Sign-in</button>
                             </div>
                         </form>
                     </div>
