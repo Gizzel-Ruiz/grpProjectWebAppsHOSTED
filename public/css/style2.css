@@ -209,9 +209,11 @@ div.scroll {
 
 /* added to handle profile button */
 .navbar {
+    height: 60px;
+    background: rgba(245, 245, 245, 0.342);
     display: flex;
     align-items: baseline;
-
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 .link{
     background: none;
@@ -224,6 +226,10 @@ div.scroll {
     color: var(--color-font-primary);
 }
 .resize {
-    height: 50px;
+    height: 30px;
     width: auto;
+}
+.nav-item{
+    width: 150px;
+    text-align: right;
 }
