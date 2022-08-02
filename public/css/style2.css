@@ -195,7 +195,13 @@ body.post{
 .post-navbar{
     width: 110%;
     margin-left: -4rem;
+    height: 60px;
+    background: rgba(245, 245, 245, 0.644);
+    display: flex;
+    align-items: baseline;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
+
 
 /* profile */
 
@@ -229,7 +235,7 @@ body.post{
 
 
 /* added to handle profile button */
-.navbar {
+.feed-nav {
     height: 60px;
     background: rgba(245, 245, 245, 0.342);
     display: flex;
