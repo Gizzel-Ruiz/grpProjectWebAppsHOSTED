@@ -65,8 +65,8 @@ body{
 }
 
 .posts-container{
-    margin-left: 6rem;
-    margin-top: -1rem;
+    margin-left: -2rem;
+    margin-top: 3rem;
 }
 
 .card{
@@ -112,24 +112,38 @@ div.scroll {
 }
 
 body.feed{
-    background-image: url('/img/feedback.jpg');
+    /* background-image: url('/img/feedback.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-
 /* cat1 */
+body.cat1{
 
-/* body.cat1{
-    background-image: ;
-} */
+    background-image: url('/img/bookback.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-/* cat 2 */
+/* cat2 */
 
-/* body.cat2{
+body.cat2{
+    background-image: url('/img/animeback.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-} */
+.cat2-posts-container{
+    margin-left: -3rem;
+}
+
+.cat2-cat-container{
+    margin-left: 50rem;
+    margin-top: -35rem;
+}
 
 
 /* new post */
