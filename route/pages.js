@@ -11,8 +11,21 @@ router.get('/usrsign', (req, res) => {
     res.render('usrsign')  
 })  
 
-router.get('/prof', (req, res) => {  
-    res.render('prof')  
+router.get('/prof', (req, res) => {
+    const {  
+        userName,  
+        userPass  
+    } = req.body; 
+    SubmitPosts.find({userName: userName}, function(err, post) {
+        if(!err) {
+            console.log("Post queried for users")
+            res.render('prof', {
+                postList: post
+            })
+        }else {
+            console.log("On Posts...FAIL!")
+        }
+    })
 })  
 
 router.get('/feed', (req, res) => {  
