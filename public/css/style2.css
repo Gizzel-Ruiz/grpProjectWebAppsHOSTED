@@ -74,6 +74,7 @@ body{
 
 .card{
     background-color: #F4E285;
+    
 }
 
 .post-btn{
@@ -265,3 +266,5 @@ body.post{
 .userNameLabel {
     display: none;
 }
+
+

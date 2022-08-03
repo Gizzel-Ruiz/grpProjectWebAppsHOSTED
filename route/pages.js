@@ -30,10 +30,9 @@ router.get('/cat2', (req, res) => {
 router.get('/post', (req, res) => {  
     if(!req.session.user){ 
         res.render('usrsign') 
-        console.log("On Post...user not logged in") 
+        console.log("Post submission attempted and failed...user is not logged in") 
     }else{ 
-        res.render('post', {userName : req.session.user})  
-        console.log('On Post...user is logged in') 
+        res.render('post', {userName : req.session.user})
     } 
 }) 
 
