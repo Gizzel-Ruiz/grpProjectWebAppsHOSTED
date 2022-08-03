@@ -55,6 +55,7 @@ body{
 
 .post-card{
     border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 
 .button-cat-container{
@@ -70,7 +71,7 @@ body{
 
 .card{
     background-color: #fff;
-    background: rgba(245, 245, 245, 0.979);
+    background: rgba(245, 245, 245, 0.959);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -214,10 +215,24 @@ body.post{
     width: 110%;
     margin-left: -4rem;
     height: 60px;
-    background: rgba(245, 245, 245, 0.644);
+    background: rgba(245, 245, 245, 0.781);
     display: flex;
     align-items: baseline;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.home-button{
+    background-color: #456990;
+}
+
+.home-button:hover{
+    display: inline-block;
+    background: var(--color-background-secondary-active);
+    border: solid;
+    border-color: var(--color-background-secondary);
+    border-radius: var(--button-border-radius);
+    border-width: var(--button-border-width);
+    color: #fff;
 }
 
 
