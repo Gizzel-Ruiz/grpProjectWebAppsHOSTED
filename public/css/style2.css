@@ -260,3 +260,8 @@ body.post{
     width: 150px;
     text-align: right;
 }
+
+/* hides username label on post page */
+.userNameLabel {
+    display: none;
+}
