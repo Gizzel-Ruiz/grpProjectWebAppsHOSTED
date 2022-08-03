@@ -278,3 +278,23 @@ body.post{
     width: 150px;
     text-align: right;
 }
+
+/* hides username label on post page */
+.userNameLabel {
+    display: none;
+}
+
+/* formats table and it's container on my posts page */
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0;
+}
+.table {
+    width: 1600px;
+    background: rgba(236, 236, 236, 0.644);
+    border: solid;
+    border-width: 2px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
