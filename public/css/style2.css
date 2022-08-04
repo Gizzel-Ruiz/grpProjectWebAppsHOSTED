@@ -66,7 +66,7 @@ body{
 
 .posts-container{
     margin-left: -2rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 .card{
@@ -134,11 +134,31 @@ body.cat2{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 770px; /* for background img size */
+    
+}
+@media all and (max-width: 900px) {
+
+    .posts-container{
+        margin-top: 10rem;
+    }
+    
+    body.cat2{
+        height: 900px;
+    }
+
+    body.cat1{
+        height: 900px;
+    }
+
+    body.post{
+        height: 900px;
+    }
 }
 
-.cat2-posts-container{
+/* .cat2-posts-container{
     margin-left: -3rem;
-}
+} */
 
 .cat2-cat-container{
     margin-left: 50rem;
@@ -148,7 +168,7 @@ body.cat2{
 
 /* new post */
 .new-post-container{
-    margin-top: 5rem;
+    margin-top: 25rem;
     margin-left: 5rem;
 }
 
@@ -285,8 +305,10 @@ body.post{
 
 /* added to handle profile button */
 .feed-nav {
+    width: 110%;
+    margin-left: -4rem;
     height: 60px;
-    background: rgba(245, 245, 245, 0.342);
+    background: rgba(245, 245, 245, 0.781);
     display: flex;
     align-items: baseline;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
