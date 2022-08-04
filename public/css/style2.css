@@ -50,6 +50,10 @@ body{
     color: #fff;
 }
 
+.upvote-button{
+
+}
+
 
 /* feed */
 
@@ -168,7 +172,7 @@ body.cat2{
 
 /* new post */
 .new-post-container{
-    margin-top: 25rem;
+    margin-top: 5rem;
     margin-left: 5rem;
 }
 
@@ -243,16 +247,6 @@ body.post{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.post-nav{
-    width: 110%;
-    margin-left: -4rem;
-    height: 60px;
-    background: rgba(245, 245, 245, 0.781);
-    display: flex;
-    align-items: baseline;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
 
 .home-button{
