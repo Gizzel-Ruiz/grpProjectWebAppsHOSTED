@@ -1,3 +1,4 @@
+const { Timestamp } = require('mongodb');
 const mongoose = require('mongoose') 
 
 var submitpostSchema = new mongoose.Schema({ 
@@ -12,7 +13,7 @@ var submitpostSchema = new mongoose.Schema({
     }, 
     description: { 
         type: String 
-    } 
+    }
 }); 
 
 module.exports = mongoose.model('posts', submitpostSchema) 

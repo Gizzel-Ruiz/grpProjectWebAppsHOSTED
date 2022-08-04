@@ -3,20 +3,21 @@
 <%- include('layouts/postheader.ejs') %>
 
 <!-- post -->
-
   <div class="container new-post-container">
     <form action="/submitPost" method="post" class="form" id="register"> 
       <label class="userNameLabel"> <%= userName %> </label> 
-      <select class="form-select form-select-lg mb-3" name="category" aria-label=".form-select-lg example"> 
+      <select class="form-select form-select-lg mb-3" name="category" aria-label=".form-select-lg example" required> 
         <option selected>Categories: </option> 
         <option value="Anime">Anime</option> 
         <option value="Books">Book</option> 
       </select> 
-      <input type="text" class="form-control title-form" name="title" placeholder="Title"> 
-      <textarea type="text" class="form-control text-form" name="description" placeholder="A penny for your thoughts..."></textarea> 
+      <input type="text" class="form-control title-form" name="title" placeholder="Title" required> 
+      <textarea type="text" class="form-control text-form" name="description" placeholder="A penny for your thoughts..." required></textarea> 
       <a class="button cancel-button" href="/feed" role="button">Cancel</a> 
       <button type="submit" class="button post-button" role="button">Post</button> 
     </form> 
+</body>
+</html>
 
 
 <!-- my js -->

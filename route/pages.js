@@ -12,20 +12,33 @@ router.get('/usrsign', (req, res) => {
 })  
 
 router.get('/prof', (req, res) => {
-    const {  
-        userName,  
-        userPass  
-    } = req.body; 
-    SubmitPosts.find({userName: userName}, function(err, post) {
-        if(!err) {
-            console.log("Post queried for users")
-            res.render('prof', {
-                postList: post
-            })
-        }else {
-            console.log("On Posts...FAIL!")
-        }
-    })
+    if(!req.session.user){ 
+        res.render('usrsign') 
+        console.log("Attempt to load post view failed") 
+    }else{ 
+        userName = req.session.user
+        console.log("Loaded post view with no errors")
+        SubmitPosts.find({userName:req.session.user}, function(err, post) {
+            if(post) {
+                console.log("Posts queried for user ")
+                if(post.length > 0){
+                    res.render('prof', {
+                        postList: post,
+                        postMsg: ""
+                    })
+                } else {
+                    res.render('prof', {
+                        postList: post,
+                        postMsg: "No posts found"
+                    })
+                    console.log("No posts found for user")
+                }
+            }else {
+                res.render('usrregi')
+                console.log("User posts query failed ")
+            }
+        })
+    } 
 })  
 
 router.get('/feed', (req, res) => {  
