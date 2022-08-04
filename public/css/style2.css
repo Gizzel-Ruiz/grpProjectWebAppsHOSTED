@@ -51,7 +51,32 @@ body{
 }
 
 .upvote-button{
+    background-color: none;
+    border: none;
+    color: rgba(73, 68, 68, 0.849);
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+.upvote-button:hover{
+    background-color: none;
+    border: none;
+    color: rgb(115, 199, 98);
+    text-decoration: none;
+}
 
+.downvote-button{
+    background-color: none;
+    border: none;
+    color: rgba(73, 68, 68, 0.849);
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+.downvote-button:hover{
+    background-color: none;
+    border: none;
+    color: rgb(92, 143, 189);
+    text-decoration: none;
 }
 
 
@@ -106,17 +131,8 @@ div.scroll {
     background: transparent;
 } */
 
-.button-flex{
-    --color-btn-primary: #5b8e7d;
-    color: #456990;
-    background: var(--color-btn-primary);
-    border:none;
-    border-radius: var(--button-border-radius);
-    
-}
-
 body.feed{
-    /* background-image: url('/img/feedback.jpg'); */
+    background-image: url('/img/feedback.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
