@@ -66,7 +66,7 @@ body{
 
 .posts-container{
     margin-left: -2rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 .card{
@@ -138,6 +138,11 @@ body.cat2{
     
 }
 @media all and (max-width: 900px) {
+
+    .posts-container{
+        margin-top: 10rem;
+    }
+    
     body.cat2{
         height: 900px;
     }
