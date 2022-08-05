@@ -13,28 +13,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 
+  <body class="container post">
     <!-- navbar -->
-    <body class="container post">
-    <nav class="navbar feed-nav">
+    <nav class="navbar navbar-expand-lg" style="box-shadow: 0 0 40px rgba(0, 0, 0, 0.4); background: rgba(236, 236, 236, 0.877);">
       <div class="container-fluid">
-        <a class="navbar-brand">
-            <img src="/img/logo.png" height="40" width="auto" alt="logo" class="d-inline-block">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logo.png" height="40" width="auto" alt="logo" class="d-inline-block">
+          Post Something
         </a>
-        <a class="button home-button" href="/feed" role="button" style="margin-left: 65rem;">Home Feed
-          <i class="bi bi-house button-icon"></i>
-        </a>
-        <!-- profile menu dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <button class="link"><img class="resize" src="img/userprofile.webp"></button>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/prof">My Posts</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/usrsign">log out</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <a class="button home-button" href="/feed" role="button">
+              Home Feed<i class="bi bi-house button-icon"></i>
+            </a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="link"><img class="resize" src="img/userprofile.webp"></button>
+              </a>  
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/prof">My Posts</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/usrsign">log out</a></li>
+              </ul>
+            </li>
           </ul>
+        </div>
       </div>
-      </div>
-  </nav>
-</body>
+    </nav>  
+  </body>
 

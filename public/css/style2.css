@@ -131,8 +131,11 @@ div.scroll {
     background: transparent;
 } */
 
+
+
 body.feed{
-    background-image: url('/img/feedback.jpg');
+    height:100%;
+    background-image: url('/img/feedbkgd.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -140,9 +143,9 @@ body.feed{
 
 /* cat1 */
 body.cat1{
-
-    background-image: url('/img/bookback.jpg');
-    background-position: center;
+    height:100%;
+    background-image: url('/img/bookbkgd.jpg');
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -150,14 +153,30 @@ body.cat1{
 /* cat2 */
 
 body.cat2{
-    background-image: url('/img/animeback.jpg');
-    background-position: center;
+    height:100%;
+    background-image: url('/img/animebkgd.jpg');
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
-    height: 770px; /* for background img size */
+    /* height: 770px; for background img size */
     
 }
-@media all and (max-width: 900px) {
+
+body.post{
+    height:100%;
+    background-image: url('/img/postbkgd.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.profile{
+    height:100%;
+    background-image: url('/img/profbkgd.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* @media all and (max-width: 900px) {
 
     .posts-container{
         margin-top: 10rem;
@@ -174,7 +193,7 @@ body.cat2{
     body.post{
         height: 900px;
     }
-}
+} */
 
 /* .cat2-posts-container{
     margin-left: -3rem;
@@ -256,13 +275,6 @@ body.cat2{
     border-radius: var(--button-border-radius);
     border-width: var(--button-border-width);
     color: #fff;
-}
-
-body.post{
-    background-image: url('/img/postback.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .home-button{
@@ -364,6 +376,32 @@ body.post{
     background: rgba(236, 236, 236, 0.644);
     border: solid;
     border-width: 2px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4); 
 }
+.feedContainer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100;
+}
+/* transforms scroll bar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(58, 58, 58, 0.733) rgba(179, 179, 179, 0.589);
+  }
+  
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgba(179, 179, 179, 0.589);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(58, 58, 58, 0.733);
+    border-radius: 20px;
+    border: 3px solid rgba(179, 179, 179, 0.589);
+  }
+  
 
