@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <!--link to website's js file-->
     <script src="phapp.js"></script>
-    <title>Document/register</title>
+    <title>Book Mei/Register</title>
 </head>
 
 <body>
@@ -40,7 +40,10 @@
                               <input type="password" class="form-control" autofocus name="userPass" placeholder="password" required>
                             </div>
                             <div class="mb-3">
-                              <label class="already-registered-label"><br>Already have an account? <a href="/usrsign">Sign in</a><br><br></label>
+                              <label class="already-registered-label"><br>Already have an account? <a href="/usrsign">Sign in</a><br></label>
+                            </div>
+                            <div class="registerMsgDiv" style="color: var(--color-font-error)">
+                                <%= regiMsg %><br><br>
                             </div>
                             <div class="mb-3">
                             <button type="submit" class="button" id="regButton">Register</button>
@@ -51,8 +54,8 @@
             </div>
         </div>
     </div>
-    <!--link to Bootstrap js file-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<!--link to Bootstrap js file-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 
 </html>

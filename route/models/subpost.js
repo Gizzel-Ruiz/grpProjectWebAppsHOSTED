@@ -1,4 +1,3 @@
-const { Timestamp } = require('mongodb');
 const mongoose = require('mongoose') 
 
 var submitpostSchema = new mongoose.Schema({ 

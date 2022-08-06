@@ -3,17 +3,20 @@ const router = express.Router();
 const Register = require('./models/register')  
 const SubmitPosts = require('./models/subpost') 
 
+// routing for user registration page
 router.get('/', (req, res) => {  
-    res.render('usrregi')  
+    res.render('usrregi', {regiMsg: ""})  
 })  
 
+// routing for user sign in page
 router.get('/usrsign', (req, res) => {  
-    res.render('usrsign')  
+    res.render('usrsign', {signinMsg: ""}) 
 })  
 
+//routing for profile page --- validates session is active and quieries user from session in order to display only posts submitted by active user
 router.get('/prof', (req, res) => {
     if(!req.session.user){ 
-        res.render('usrsign') 
+        res.render('usrsign', {signinMsg: "You've been signed out"}) 
         console.log("Attempt to load post view failed") 
     }else{ 
         userName = req.session.user
@@ -34,52 +37,79 @@ router.get('/prof', (req, res) => {
                     console.log("No posts found for user")
                 }
             }else {
-                res.render('usrregi')
+                res.render('usrsign', {signinMsg: ""})
                 console.log("User posts query failed ")
             }
         })
     } 
 })  
 
+// routing for feed page (landing page post registration/sign in)
 router.get('/feed', (req, res) => {  
     res.render('feed')  
 })  
 
+// routing for category 1 page 
 router.get('/cat1', (req, res) => {  
     res.render('cat1')  
 })   
 
+// routing for category 2 page 
 router.get('/cat2', (req, res) => {  
     res.render('cat2')  
 })  
 
+// routing for submitting a post page --- validates session to ensure user is logged in, if logged in session tracks user id to ensure post is linked to user 
 router.get('/post', (req, res) => {  
     if(!req.session.user){ 
-        res.render('usrsign') 
+        res.render('usrsign', {signinMsg: "You've been signed out"}) 
         console.log("Post submission attempted and failed...user is not logged in") 
     }else{ 
         res.render('post', {userName : req.session.user})
     } 
 }) 
 
-router.get('/errorusrsign', (req, res) => {  
-    res.render('errorusrsign')  
-})  
-
+// routing for registration page --- queries database to ensure that email address and username are unique and passes appropriate error messages 
 router.post("/submitRegister", (req, res) => {  
-    const register = new Register ({  
-        userEmail: req.body.userEmail,  
-        userName: req.body.userName,  
-        userPass: req.body.userPass  
-    }); 
-    Register.collection.insertOne(register)  
-    .then(result => {  
-        req.session.user = userName 
-        res.render('feed')  
-    })  
-    .catch(err => console.log(err));  
+    const {  
+        userEmail,
+        userName,  
+        userPass  
+    } = req.body; 
+    Register.findOne({userEmail : userEmail}, function(err, doc){ 
+        if(err) throw err; 
+        if(doc) { 
+            console.log("Email address already registered") 
+            res.render('usrregi', {regiMsg: "Email address is already registered"})
+            
+        }else{ 
+            console.log("Email address available for registration") 
+            Register.findOne({userName : userName}, function(err, doc){ 
+                if(err) throw err; 
+                if(doc) { 
+                    console.log("User name already taken") 
+                    res.render('usrregi', {regiMsg: "Username not available"})  
+                } else{
+                    console.log("User name available") 
+                    const register = new Register ({  
+                        userEmail: req.body.userEmail,  
+                        userName: req.body.userName,  
+                        userPass: req.body.userPass  
+                    }); 
+                    Register.collection.insertOne(register)  
+                    .then(result => {  
+                        req.session.user = userName 
+                        res.render('feed')  
+                    })  
+                    .catch(err => console.log(err)); 
+                    res.render('feed') 
+                }
+            }) 
+        }
+    }) 
 })  
 
+// routing for sign up page --- captures sign up details 
 router.post('/submitSignin', (req, res) => {  
     const {  
         userName,  
@@ -93,17 +123,18 @@ router.post('/submitSignin', (req, res) => {
             res.render('feed') 
         }else{ 
             console.log("No user match found") 
-            res.render('errorusrsign') 
+            res.render('usrsign', {signinMsg: "TESTTTTTTTTTTTTTT: Incorrect username/password"}) 
         } 
     }) 
 })  
 
+// routing for post submissions --- captures submission data and passess to database 
 router.post("/submitPost", (req, res) => {  
     const submitposts = new SubmitPosts ({  
         userName: req.session.user, 
         category: req.body.category,  
         title: req.body.title,  
-        description: req.body.description  
+        description: req.body.description
     }); 
     SubmitPosts.collection.insertOne(submitposts)  
     .then(result => {  
