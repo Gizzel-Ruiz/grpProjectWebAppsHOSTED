@@ -69,6 +69,16 @@ router.get('/post', (req, res) => {
     } 
 }) 
 
+// routing for log out click --- destroys user session and displays log out message
+router.get("/loggedOut", (req, res) => {
+    const {  
+        userName
+    } = req.session.user;
+    req.session.destroy();
+    console.log("Session terminated.")
+    res.render('loggedout')
+})
+
 // routing for registration page --- queries database to ensure that email address and username are unique and passes appropriate error messages 
 router.post("/submitRegister", (req, res) => {  
     const {  
