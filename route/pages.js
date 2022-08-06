@@ -123,7 +123,7 @@ router.post('/submitSignin', (req, res) => {
             res.render('feed') 
         }else{ 
             console.log("No user match found") 
-            res.render('usrsign', {signinMsg: "TESTTTTTTTTTTTTTT: Incorrect username/password"}) 
+            res.render('usrsign', {signinMsg: "Incorrect username/password"}) 
         } 
     }) 
 })  
