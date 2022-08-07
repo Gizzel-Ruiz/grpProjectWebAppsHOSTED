@@ -87,33 +87,35 @@ router.post("/submitRegister", (req, res) => {
         userName,  
         userPass  
     } = req.body; 
-    Register.findOne({userName : userName}, function(err, doc){ 
+    Register.findOne({userEmail: userEmail}, function(err, doc){ 
         if(err) throw err; 
         if(doc) { 
-            console.log("User Name already registered") 
-            return res.render('usrregi', {regiMsg: "User Name are already taken"})
+            console.log("Email Address already registered") 
+            return res.render('usrregi', {regiMsg: "Email Address are already taken"})
         }else{ 
-            // console.log("Email address available for registration") 
-            // Register.findOne({userName : userName}, function(err, doc){ 
-            //     if(err) throw err; 
-            //     if(doc) { 
-            //         console.log("User name already taken") 
-            //         res.render('usrregi', {regiMsg: "Username not available"})  
-            //     } else{
-            console.log("User name available") 
-            const register = new Register ({  
-                userEmail: req.body.userEmail,  
-                userName: req.body.userName,  
-                userPass: req.body.userPass  
-            }); 
-            Register.collection.insertOne(register)  
-            .then(result => {  
-                return res.render('usrsign', {signinMsg: ""})  
-            })  
-            .catch(err => console.log(err)); 
-            // return res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."});  
+            console.log("Email address available for registration") 
+            Register.findOne({userName : userName}, function(err, doc){ 
+                if(err) throw err; 
+                if(doc) { 
+                    console.log("User name already taken") 
+                    res.render('usrregi', {regiMsg: "Username not available"})  
+                } else{
+                    console.log("Email Address and User name available") 
+                    const register = new Register ({  
+                        userEmail: req.body.userEmail,  
+                        userName: req.body.userName,  
+                        userPass: req.body.userPass  
+                    }); 
+                    Register.collection.insertOne(register)  
+                    .then(result => {  
+                        return res.render('usrsign', {signinMsg: ""})  
+                    })  
+                    .catch(err => console.log(err)); 
+                    // return res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."});  
+                }
+            }) 
         }
-    }) 
+    })
 })  
 
 // routing for sign up page --- captures sign up details 
