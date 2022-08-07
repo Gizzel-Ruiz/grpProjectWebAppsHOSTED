@@ -87,11 +87,11 @@ router.post("/submitRegister", (req, res) => {
         userName,  
         userPass  
     } = req.body; 
-    Register.findOne({userEmail: userEmail, userName : userName}, function(err, doc){ 
+    Register.findOne({userName : userName}, function(err, doc){ 
         if(err) throw err; 
         if(doc) { 
-            console.log("Email Address and User Name already registered") 
-            return res.render('usrregi', {regiMsg: "Email Address and User Name are already taken"})
+            console.log("User Name already registered") 
+            return res.render('usrregi', {regiMsg: "User Name are already taken"})
         }else{ 
             // console.log("Email address available for registration") 
             // Register.findOne({userName : userName}, function(err, doc){ 
@@ -111,7 +111,7 @@ router.post("/submitRegister", (req, res) => {
                 return res.render('usrsign', {signinMsg: ""})  
             })  
             .catch(err => console.log(err)); 
-            return res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."})  
+            // return res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."});  
         }
     }) 
 })  
