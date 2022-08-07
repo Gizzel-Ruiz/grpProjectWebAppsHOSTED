@@ -113,7 +113,7 @@ router.post("/submitRegister", (req, res) => {
                         res.render('usrsign')  
                     })  
                     .catch(err => console.log(err)); 
-                    res.render('usrregi') 
+                    res.render('usrregi', {regiMsg:""}) 
                 }
             }) 
         }
