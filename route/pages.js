@@ -100,6 +100,7 @@ router.post("/submitRegister", (req, res) => {
                     console.log("User name already taken") 
                     res.render('usrregi', {regiMsg: "Username not available"})  
                 } else{
+                    userName = req.session.user
                     console.log("User name available") 
                     const register = new Register ({  
                         userEmail: req.body.userEmail,  
