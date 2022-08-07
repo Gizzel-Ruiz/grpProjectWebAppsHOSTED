@@ -108,7 +108,6 @@ router.post("/submitRegister", (req, res) => {
                     }); 
                     Register.collection.insertOne(register)  
                     .then(result => {  
-                        req.session.user = userName 
                         res.render('usrsign', {signinMsg: ""})  
                     })  
                     .catch(err => console.log(err)); 
