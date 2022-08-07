@@ -109,8 +109,7 @@ router.post("/submitRegister", (req, res) => {
                     }); 
                     Register.collection.insertOne(register)  
                     .then(result => {  
-                        res.render('feed')  
-                        console.log ("user registered --- " + userName)
+                        res.render('usrsign', {signinMsg: ""})  
                     })  
                     .catch(err => console.log(err)); 
                     res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."})  
