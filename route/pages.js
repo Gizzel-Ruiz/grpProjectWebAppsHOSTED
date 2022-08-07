@@ -82,11 +82,11 @@ router.get("/loggedOut", (req, res) => {
 
 // routing for registration page --- queries database to ensure that email address and username are unique and passes appropriate error messages 
 router.post("/submitRegister", (req, res) => {  
-    const {  
-        userEmail,
-        userName,  
-        userPass  
-    } = req.body; 
+    const register = new Register ({  
+        userEmail: req.body.userEmail,  
+        userName: req.body.userName,  
+        userPass: req.body.userPass  
+    });  
     Register.findOne({userEmail : userEmail}, function(err, doc){ 
         if(err) throw err; 
         if(doc) { 
@@ -98,14 +98,14 @@ router.post("/submitRegister", (req, res) => {
                 if(err) throw err; 
                 if(doc) { 
                     console.log("User name already taken") 
-                    return res.render('usrregi', {regiMsg: "Username not available"})  
+                    res.render('usrregi', {regiMsg: "Username not available"})  
                 } else{
                     console.log("User name available") 
-                    const register = new Register ({  
-                        userEmail: req.body.userEmail,  
-                        userName: req.body.userName,  
-                        userPass: req.body.userPass  
-                    }); 
+                    // const register = new Register ({  
+                    //     userEmail: req.body.userEmail,  
+                    //     userName: req.body.userName,  
+                    //     userPass: req.body.userPass  
+                    // }); 
                     Register.collection.insertOne(register)  
                     .then(result => {  
                         return res.render('usrsign', {signinMsg: ""})  
@@ -113,9 +113,9 @@ router.post("/submitRegister", (req, res) => {
                     .catch(err => console.log(err)); 
                     return res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."})  
                 }
-            })
+            }) 
         }
-    }) 
+    })
 })  
 
 // routing for sign up page --- captures sign up details 
