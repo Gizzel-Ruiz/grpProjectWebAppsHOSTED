@@ -87,7 +87,7 @@ router.post("/submitRegister", (req, res) => {
         userName,  
         userPass  
     } = req.body; 
-    Register.findOne({userEmail : userEmail, userName : userName}, function(err, doc){ 
+    Register.findOne({userEmail : userEmail}, function(err, doc){ 
         if(err) throw err; 
         if(doc) { 
             console.log("Email Address and User Name already registered") 
@@ -98,7 +98,7 @@ router.post("/submitRegister", (req, res) => {
                 if(err) throw err; 
                 if(doc) { 
                     console.log("User name already taken") 
-                    res.render('usrregi', {regiMsg: "Username not available"})  
+                    return res.render('usrregi', {regiMsg: "Username not available"})  
                 } else{
                     console.log("User name available") 
                     const register = new Register ({  
