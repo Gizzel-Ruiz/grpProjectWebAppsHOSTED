@@ -108,10 +108,10 @@ router.post("/submitRegister", (req, res) => {
                     }); 
                     Register.collection.insertOne(register)  
                     .then(result => {  
-                        res.render('feed')  
+                        res.render('signin')  
                     })  
                     .catch(err => console.log(err)); 
-                    res.render('feed') 
+                    res.render('register') 
                 }
             }) 
         }
