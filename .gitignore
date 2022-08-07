@@ -1,6 +1,6 @@
 .DS_Store
-/mongo.js
-/scrt.js 
+# /mongo.js
+# /scrt.js 
 
 # Logs
 logs

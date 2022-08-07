@@ -13,6 +13,9 @@
   },
   "author": "Ivana Mayberry Gizzel Ruiz",
   "license": "ISC",
+  "engines": {
+    "node": "16.16.0"
+  },
   "bugs": {
     "url": "https://github.com/Gizzel-Ruiz/grpProjectWebAppsHOSTED/issues"
   },
