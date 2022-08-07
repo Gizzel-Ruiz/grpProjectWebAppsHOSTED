@@ -92,8 +92,6 @@ router.post("/submitRegister", (req, res) => {
         if(doc) { 
             console.log("Email address already registered") 
             res.render('usrregi', {regiMsg: "Email address is already registered"})
-            connection.end()
-            
         }else{ 
             console.log("Email address available for registration") 
             Register.findOne({userName : userName}, function(err, doc){ 
@@ -115,9 +113,9 @@ router.post("/submitRegister", (req, res) => {
                     .catch(err => console.log(err)); 
                     res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."})  
                 }
-            connection.end()
             }) 
         }
+    Register.connection.end()
     }) 
 })  
 
