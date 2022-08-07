@@ -92,16 +92,32 @@ router.post("/submitRegister", (req, res) => {
         if(doc) { 
             console.log("Email address already registered") 
             res.render('usrregi', {regiMsg: "Email address is already registered"})
+            return res.status(400).json({
+                status: 'error',
+                error: 'Email address is already registered',
+              });
             
         }else{ 
             console.log("Email address available for registration") 
+            res.status(200).json({
+                status: 'succes',
+                data: 'Email address available for registration',
+              })
             Register.findOne({userName : userName}, function(err, doc){ 
                 if(err) throw err; 
                 if(doc) { 
                     console.log("User name already taken") 
                     res.render('usrregi', {regiMsg: "Username not available"})  
+                    return res.status(400).json({
+                        status: 'error',
+                        error: 'User name already taken',
+                      });
                 } else{
                     console.log("User name available") 
+                    res.status(200).json({
+                        status: 'succes',
+                        data: 'User name available',
+                      })
                     const register = new Register ({  
                         userEmail: req.body.userEmail,  
                         userName: req.body.userName,  
