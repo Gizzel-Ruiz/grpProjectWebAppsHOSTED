@@ -66,6 +66,7 @@ router.get('/post', (req, res) => {
         console.log("Post submission attempted and failed...user is not logged in") 
     }else{ 
         res.render('post', {userName : req.session.user})
+        console.log("Post submission attempted and sucessful...user is logged in " + userName) 
     } 
 }) 
 
@@ -108,10 +109,11 @@ router.post("/submitRegister", (req, res) => {
                     }); 
                     Register.collection.insertOne(register)  
                     .then(result => {  
-                        res.render('usrsign', {signinMsg: ""})  
+                        res.render('feed')  
+                        console.log ("user registered --- " + userName)
                     })  
                     .catch(err => console.log(err)); 
-                    res.render('usrregi', {regiMsg:"Some error occured: Account not registered try again"}) 
+                    res.render('usrregi', {regiMsg: "Some error occured. Account not created, try again."})  
                 }
             }) 
         }
