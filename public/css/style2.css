@@ -90,6 +90,10 @@ h5{
     font-weight: bold;
 }
 
+footer , small{
+    font-family: 'Poppins', sans-serif;
+}
+
 .post-card{
     border: none;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
