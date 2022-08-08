@@ -107,6 +107,7 @@ footer{
     border: none;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
     font-family: 'Indie Flower', cursive;
+    font-size: 22px;
 }
 
 .button-cat-container{
