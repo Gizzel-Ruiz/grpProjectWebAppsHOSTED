@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 /* Basic style */
 body{
     --color-background-primary: #F4E285;
@@ -13,7 +16,7 @@ body{
     --button-border-radius: 4px;
     --button-border-width: 2px;
 
-   
+    font-family: 'Indie Flower', cursive;
     font-size: 18px;
     background-color: #fff;
 /* FONT FAMILY TBD */
@@ -45,7 +48,7 @@ body{
 
 .button-icon{
     font-size: 1.2rem;
-    margin-left: .5rem;
+    margin-left: .35rem;
     transition: .3s;
     color: #fff;
 }
