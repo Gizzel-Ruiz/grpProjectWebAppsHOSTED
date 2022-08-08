@@ -51,12 +51,42 @@ router.get('/feed', (req, res) => {
 
 // routing for category 1 page 
 router.get('/cat1', (req, res) => {  
-    res.render('cat1')  
+    SubmitPosts.find({category: "Books"}, function(err, bookpost) {
+        if(bookpost) {
+            console.log("Anime posts queried ")
+            if(bookpost.length > 0){
+                return res.render('cat1', {
+                    bookpostList: bookpost,
+                    bookErrorMSG: ""
+                })
+            } else {
+                return res.render('cat1', {
+                    bookpostList: bookpost,
+                    bookErrorMSG: "There are currently no post in this category"
+                })
+            }
+        }
+    })
 })   
 
 // routing for category 2 page 
 router.get('/cat2', (req, res) => {  
-    res.render('cat2')  
+    SubmitPosts.find({category: "Anime"}, function(err, animepost) {
+        if(animepost) {
+            console.log("Anime posts queried ")
+            if(animepost.length > 0){
+                return res.render('cat2', {
+                    animepostList: animepost,
+                    animeErrorMSG: ""
+                })
+            } else {
+                return res.render('cat2', {
+                    animepostList: animepost,
+                    animeErrorMSG: "There are currently no post in this category"
+                })
+            }
+        }
+    }) 
 })  
 
 // routing for submitting a post page --- validates session to ensure user is logged in, if logged in session tracks user id to ensure post is linked to user 
@@ -139,11 +169,13 @@ router.post('/submitSignin', (req, res) => {
 
 // routing for post submissions --- captures submission data and passess to database 
 router.post("/submitPost", (req, res) => {  
+    msg = "postplaceholder"
     const submitposts = new SubmitPosts ({  
         userName: req.session.user, 
         category: req.body.category,  
         title: req.body.title,  
-        description: req.body.description
+        description: req.body.description,
+        imageName: msg
     }); 
     SubmitPosts.collection.insertOne(submitposts)  
     .then(result => {  

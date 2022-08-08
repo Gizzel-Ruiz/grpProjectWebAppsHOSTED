@@ -7,87 +7,27 @@
 
 <!-- <h2 style="margin-top: 2rem; margin-bottom: 1.5rem; margin-left: 0rem;">Anime Reviews</h2> -->
     <div class="container posts-container scroll" style="width: 900px; height: 730px;">
+        <!--div to hold messages passed when profile page is loaded-->
+        <div class="animeErrorMSG" style="color: red; font-weight: bold; font-size: 30px;">
+        <%= animeErrorMSG %>
+        </div>
+
         <div class="row row-cols-2" style="width: 700px">
-            <!--Spy x Family-->
+            <!--cards for posts -->
+            <%animepostList.forEach(animepost => {%>
             <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="img/anime_spyxfamily.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
+                <img src="img/<%= animepost.imageName %>.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
                 <div class="card-body">
-                <h5 class="card-title">Spy x Family</h5>
-                <p class="card-text">Plot twist at every turn! Spies, assassins, telepaths, and much more in this action-packed story. Anya is by far the best character in this story. Cute, fierce, and a telepath – what else could you ask for?! If you are a fan of Hinamatsuri or Love Of Kill give Spy x Family a try, you won’t regret it. 
+                <h5 class="card-title"> <%= animepost.title %></h5>
+                <p class="card-text"> <%= animepost.description %> 
                 </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 1 day ago </small>
+                <p class="card-text"><small class="text-muted">Posted by <%= animepost.userName %> </small>
                 </p>
                 <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
                 <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
                 </div>
             </div>
-            <div class="col">
-            </div>
-
-            <!--My Neighbor Totoro-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/anime_totoro.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">My Neighbor Totoro</h5>
-                <p class="card-text">If you like stories full of adventure My Neighbor Totoro is right for you. If you are looking for something with villains and plots to beat them skip this one. My Neighbor Totoro has great characters, a light and happy story line, and will take you through a rollercoaster of emotions.  
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 6 mins ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
-
-            <!--Tokyo Ghoul-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/anime_tokyoghoul.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Tokyo Ghoul</h5>
-                <p class="card-text">Flesh eating creatures blend into with everyday society. Do you join the fight against them or do you dare attempt to get to know and understand these creatures? Tokyo Ghoul follows Ken kaneki as he transforms into a ghoul who craves flesh, can’t control his impulses, and must now battle internally with his new ghoul persona and any shred of humanity he has left. 
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 6 mins ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
-
-            <!--Fruits Basket-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/anime_fruitsbasket.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Fruits Basket</h5>
-                <p class="card-text">Thought I’d like this because I love anything to do with astrology or zodiacs but this was really slow and was too full of romance for my taste. The best part of this story is that characters transform into the zodiac animals but that wasn’t enough to keep me hooked.    
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 6 mins ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
-
-            <!--Host Club-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/anime_hostclub.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Host Club</h5>
-                <p class="card-text">A story I didn’t quite think I’d enjoy about the students of Ouran Academy and the spicy hidden activities some of it’s students participate in. Character development goes from 0 to 10 making Host Club a hilarious and evolving story. Definitely worth a watch!    
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 6 mins ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
-
-            <!--Attack on Titan-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/anime_attackontitan.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Attack on Titan</h5>
-                <p class="card-text"> Hands down one of the best anime series I've ever watched! There's action, romance, betrayal, and so much more in this one. Plot twists and epic fight sceens will keep you wanting more. If you haven't seen AOT, what are you waiting for?!? 
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 6 days ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
+            <% }) %>
 
         </div>
     </div>

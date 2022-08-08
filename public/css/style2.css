@@ -390,4 +390,8 @@ body.profile{
     border: 3px solid rgba(179, 179, 179, 0.589);
   }
   
-
+.postMsglabel {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -8,13 +8,13 @@ const app = express();
 const session = require('express-session'); 
 // const scrt = require('./scrt') 
 
-app.use(session({secret: process.env.SCRT, resave:false, saveUninitialized:true})) 
+app.use(session({secret: "averyveryverylonglonglonglongextralongstatementasasecret", resave:false, saveUninitialized:true})) 
 app.set('view engine', 'ejs'); 
 app.use(bodyParser.urlencoded({extended:true})); 
 app.use(express.static(path.join(__dirname, 'public'))); 
 app.use('/', route); 
 
-mongoose.connect(process.env.MONGODB_URI, {useNewURLParser: true, useUnifiedTopology: true}) 
+mongoose.connect("mongodb+srv://gruiz8:fd8yAqe3RSwXW8ex@cluster0.klvn1.mongodb.net/WebAppProjectDB", {useNewURLParser: true, useUnifiedTopology: true}) 
 .then(() => { 
     app.listen(process.env.PORT || 3000, () => { 
         console.log("Server has started running on 3000") 

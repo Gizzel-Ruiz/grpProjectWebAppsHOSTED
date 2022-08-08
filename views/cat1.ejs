@@ -6,36 +6,27 @@
 <!-- posts -->
 <!-- <h2 style="margin-top: 4rem; margin-bottom: 1.5rem; margin-left: 6rem;">Book Reviews</h2> -->
     <div class="container posts-container scroll" style="width: 900px; height: 730px;">
+        <!--div to hold messages passed when profile page is loaded-->
+        <div class="bookErrorMSG" style="color: red; font-weight: bold; font-size: 30px;">
+        <%= bookErrorMSG %>
+        </div>
+
         <div class="row row-cols-2" style="width: 700px">
-
+            <!--cards for posts -->
+            <%bookpostList.forEach(bookpost => {%>
             <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/book2.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
+                <img src="img/<%= bookpost.imageName %>.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
                 <div class="card-body">
-                <h5 class="card-title">Harry Potter and the Order of the Phoenx</h5>
-                <footer class="blockquote-footer" style="margin-top: .5rem;">By J.K. Rowling</footer>
-                <p class="card-text"> Until this book Harry's story was more lighthearted there was some tougher parts in the earlier books but this one has more angst and frustration as Harry gets left in the dark and the minister of magic refuses to believe him and Dombledore.
-                    This book isn't my favorite in the series however I still enjoyed it because of Harry's hardships in growing up in a house where he is ridiculed, not having a happy ending, the murderer of his parents rebuilding his army. This book takes the series from more than just being for children as there's some topics and themes that children may not wrap their minds around. 
+                <h5 class="card-title"> <%= bookpost.title %></h5>
+                <p class="card-text"> <%= bookpost.description %> 
                 </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 12 mins ago </small>
+                <p class="card-text"><small class="text-muted">Posted by <%= bookpost.userName %> </small>
                 </p>
                 <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
                 <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
                 </div>
             </div>
-
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/book3.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">The Name of the Wind</h5>
-                <footer class="blockquote-footer" style="margin-top: .5rem;">By Patrick Rothfuss</footer>
-                <p class="card-text"> This book follows the life of the main character as he recalls events that happened throught his life. Rothfuss has filled this book with details that you dont catch on the first read, with hidden meanings, foreshadowing, and concealed connections. The third book is still not out yet 
-                    after 10 years of the second book release however if you enjoy high fantasy/ heroic fantasy character driven story you should pick this one up.
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 13 mins ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
+            <% }) %>
         </div>
     </div>
 
