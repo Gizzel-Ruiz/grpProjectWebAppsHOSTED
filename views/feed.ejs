@@ -7,51 +7,26 @@
 
 <!-- <h2 style="margin-top: 2rem; margin-bottom: 1.5rem; margin-left: 10rem;">Most Popular</h2> -->
     <div class="container posts-container scroll" style="width: 900px; height: 730px; display: flex;">
-        <div class="row row-cols-2" style="width: 700px">
-            <!--Attack on Titan-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/anime_attackontitan.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Attack on Titan</h5>
-                <p class="card-text"> Hands down one of the best anime series I've ever watched! There's action, romance, betrayal, and so much more in this one. Plot twists and epic fight sceens will keep you wanting more. If you haven't seen AOT, what are you waiting for?!? 
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 6 days ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
+        <!--div to hold messages passed when profile page is loaded-->
+        <div class="animeErrorMSG" style="color: red; font-weight: bold; font-size: 30px;">
+            <%= editorsPickErrorMSG %>
             </div>
-
-
-            <div class="col"></div>
-
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="/img/book.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Throne of Glass</h5>
-                <footer class="blockquote-footer" style="margin-top: .5rem;">By Sarah J Maas</footer>
-                <p class="card-text"> Throne of glass starts off as a story about an assassin fighting for her freedom in a fierce competition but as the series progresses it becomes more than just that. Secrets, death, corrupt monarchy, magic, romance. This book is perfect for an average fantasy reader.
-                    The character developments that happen throughout this series is handled well. With good world building, strong female protagonist, action, the charcaters battling between what's good and evil I recommend you to read this series.
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 3 mins ago</small></p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
+    
+            <div class="row row-cols-2" style="width: 700px">
+                <!--cards for posts -->
+                <%editorspickList.forEach(editorspick => {%>
+                <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
+                    <img src="img/<%= editorspick.imageName %>.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
+                    <div class="card-body">
+                    <h5 class="card-title"> <%= editorspick.title %></h5>
+                    <p class="card-text"> <%= editorspick.description %> 
+                    </p>
+                    <p class="card-text"><small class="text-muted">Posted by <%= editorspick.userName %> </small>
+                    </p>
+                    </div>
                 </div>
-            </div>
+                <% }) %>
 
-            <!--Spy x Family-->
-            <div class="card post-card mb-5" style="width: 130%; margin-left: 15%;">
-                <img src="img/anime_spyxfamily.jpg" class="card-img-top" alt="..." style="height: 450px; width: 350px;">
-                <div class="card-body">
-                <h5 class="card-title">Spy x Family</h5>
-                <p class="card-text">Plot twist at every turn! Spies, assassins, telepaths, and much more in this action-packed story. Anya is by far the best character in this story. Cute, fierce, and a telepath – what else could you ask for?! If you are a fan of Hinamatsuri or Love Of Kill give Spy x Family a try, you won’t regret it. 
-                </p>
-                <p class="card-text"><small class="text-muted">Posted by *User* 1 day ago </small>
-                </p>
-                <a class="upvote-button" role="button"><i class="bi bi-arrow-up-square"></i></a>
-                <a class="downvote-button" role="button"><i class="bi bi-arrow-down-square"></i></a>
-                </div>
-            </div>
-            <div class="col"></div>
         </div>
     </div>
 

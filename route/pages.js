@@ -44,16 +44,31 @@ router.get('/prof', (req, res) => {
     } 
 })  
 
-// routing for feed page (landing page post registration/sign in)
+// routing for feed page when accessed from category, post, profile pages
 router.get('/feed', (req, res) => {  
-    res.render('feed')  
+    SubmitPosts.find({editorsPick: "Y"}, function(err, editorspick) {
+        if(editorspick) {
+            console.log("Editors picks posts queried ")
+            if(editorspick.length > 0){
+                return res.render('feed', {
+                    editorspickList: editorspick,
+                    editorsPickErrorMSG: ""
+                })
+            } else {
+                return res.render('feed', {
+                    editorspickList: editorspick,
+                    editorsPickErrorMSG: "There are currently no post in this category"
+                })
+            }
+        }
+    }) 
 })  
 
 // routing for category 1 page 
 router.get('/cat1', (req, res) => {  
     SubmitPosts.find({category: "Books"}, function(err, bookpost) {
         if(bookpost) {
-            console.log("Anime posts queried ")
+            console.log("Books posts queried ")
             if(bookpost.length > 0){
                 return res.render('cat1', {
                     bookpostList: bookpost,
@@ -159,7 +174,23 @@ router.post('/submitSignin', (req, res) => {
         if(doc) { 
             console.log("User authenticated") 
             req.session.user = userName 
-            res.render('feed') 
+            //routes to feed after a sign in
+            SubmitPosts.find({editorsPick: "Y"}, function(err, editorspick) {
+                if(editorspick) {
+                    console.log("Editor's picks posts queried ")
+                    if(editorspick.length > 0){
+                        return res.render('feed', {
+                            editorspickList: editorspick,
+                            editorsPickErrorMSG: ""
+                        })
+                    } else {
+                        return res.render('feed', {
+                            editorspickList: editorspick,
+                            editorsPickErrorMSG: "There are currently no post in this category"
+                        })
+                    }
+                }
+            }) 
         }else{ 
             console.log("No user match found") 
             res.render('usrsign', {signinMsg: "Incorrect username/password"}) 
@@ -169,17 +200,35 @@ router.post('/submitSignin', (req, res) => {
 
 // routing for post submissions --- captures submission data and passess to database 
 router.post("/submitPost", (req, res) => {  
-    msg = "postplaceholder"
+    imgMsg = "postplaceholder"
+    editorMsg = "NOT SELECTED"
     const submitposts = new SubmitPosts ({  
         userName: req.session.user, 
         category: req.body.category,  
         title: req.body.title,  
         description: req.body.description,
-        imageName: msg
+        imageName: imgMsg,
+        editorsPick: editorMsg
     }); 
     SubmitPosts.collection.insertOne(submitposts)  
     .then(result => {  
-        res.render('feed')  
+        //routes to feed page when a post is submitted
+        SubmitPosts.find({editorsPick: "Y"}, function(err, editorspick) {
+            if(editorspick) {
+                console.log("Editor's picks posts queried ")
+                if(editorspick.length > 0){
+                    return res.render('feed', {
+                        editorspickList: editorspick,
+                        editorsPickErrorMSG: ""
+                    })
+                } else {
+                    return res.render('feed', {
+                        editorspickList: editorspick,
+                        editorsPickErrorMSG: "There are currently no post in this category"
+                    })
+                }
+            }
+        }) 
     })  
     .catch(err => console.log(err));  
 })  

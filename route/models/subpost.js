@@ -4,9 +4,6 @@ var submitpostSchema = new mongoose.Schema({
     userName:{ 
         type: String 
     }, 
-    imageName: {
-        type: String
-    },
     category: { 
         type: String 
     }, 
@@ -15,6 +12,12 @@ var submitpostSchema = new mongoose.Schema({
     }, 
     description: { 
         type: String 
+    },
+    imageName: {
+        type: String
+    },
+    editorsPick: {
+        type: String
     }
 }); 
 
